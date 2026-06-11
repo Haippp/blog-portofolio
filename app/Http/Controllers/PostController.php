@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function home(){
-        return "Ini Halaman Home";
+        return view('home');
     }
     public function index(){
         return "Ini Halaman Blog";
