@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Home & Portofolio')
 @section('content')
 <section class="grid grid-cols-2 min-h-screen items-center justify-center">
     <div class="w-full flex gap-3 justify-center">
@@ -13,29 +14,38 @@
         </div>
     </div>
     <div class="flex w-full justify-center self-end">
-        <img src="{{ asset('images/profile-picture.png.png') }}" alt="my-photo" id="profile-image" class="w-[500px]">
+        <img src="{{ asset('images/profile-picture.png') }}" alt="my-photo" id="profile-image" class="w-[500px]">
     </div>
 </section>
 <section class="mx-auto max-w-5xl w-full min-h-screen flex flex-col justify-center">
     <div class="w-full flex justify-between items-center py-3">
-        <h4 class="text-emerald-900 text-2xl font-bold">Artikel Terbaru Saya</h4>
-        <a href="" class="bg-amber-600 hover:bg-amber-700 px-4 py-1 font-bold rounded-full text-white">Lihat semua artikel</a>
+        <h3 class="text-emerald-900 text-2xl font-bold">Artikel Terbaru Saya</h4>
+        <a href="{{ route('blog.index') }}" class="bg-amber-600 hover:bg-amber-700 px-4 py-1 font-bold rounded-full text-white">Lihat semua artikel</a>
     </div>
     <div class="grid grid-cols-3 gap-8 mt-10">
         <div class="bg-white shadow-md py-15 px-8 rounded-lg">
             <img src="" alt="thumbnail" class="h-[200px] border">
             <h4 class="text-xl font-black mt-5">Judul Artikel</h4>
-            <p class="text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, aliquam!</p>
+            <p class="text-sm mt-2 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, aliquam!</p>
+            <a href="{{ route('blog.show', 'belajar-dasar-laravel') }}" class="hover:underline font-bold text-blue-600">
+                Baca Selengkapnya →
+            </a>
         </div>
         <div class="bg-white shadow-md py-15 px-8 rounded-lg">
             <img src="" alt="thumbnail" class="h-[200px] border">
             <h4 class="text-xl font-black mt-5">Judul Artikel</h4>
-            <p class="text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, aliquam!</p>
+            <p class="text-sm mt-2 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, aliquam!</p>
+            <a href="{{ route('blog.show', 'belajar-dasar-laravel') }}" class="hover:underline font-bold text-blue-600">
+                Baca Selengkapnya →
+            </a>
         </div>
         <div class="bg-white shadow-md py-15 px-8 rounded-lg">
             <img src="" alt="thumbnail" class="h-[200px] border">
             <h4 class="text-xl font-black mt-5">Judul Artikel</h4>
-            <p class="text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, aliquam!</p>
+            <p class="text-sm mt-2 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, aliquam!</p>
+            <a href="{{ route('blog.show', 'belajar-dasar-laravel') }}" class="hover:underline font-bold text-blue-600">
+                Baca Selengkapnya →
+            </a>
         </div>
     </div>
 </section>
