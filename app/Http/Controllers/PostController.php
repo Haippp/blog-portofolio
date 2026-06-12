@@ -13,6 +13,6 @@ class PostController extends Controller
         return view('blog.index');
     }
     public function show(){
-        return "Ini Halaman Detail Blog";
+        return view('blog.show');
     }
 }
