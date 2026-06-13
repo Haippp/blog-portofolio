@@ -23,30 +23,16 @@
         <a href="{{ route('blog.index') }}" class="bg-amber-600 hover:bg-amber-700 px-4 py-1 font-bold rounded-full text-white">Lihat semua artikel</a>
     </div>
     <div class="grid grid-cols-3 gap-8 mt-10">
+        @foreach($latestPosts as $post)
         <div class="bg-white shadow-md py-15 px-8 rounded-lg">
             <img src="" alt="thumbnail" class="h-[200px] border">
-            <h4 class="text-xl font-black mt-5">Judul Artikel</h4>
-            <p class="text-sm mt-2 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, aliquam!</p>
-            <a href="{{ route('blog.show', 'belajar-dasar-laravel') }}" class="hover:underline font-bold text-blue-600">
+            <h4 class="text-xl font-black mt-5">{{ $post->title }}</h4>
+            <p class="text-sm mt-2 mb-3 text-justify">{{ Str::limit($post->body, 70, '...') }}</p>
+            <a href="{{ route('blog.show', $post->slug) }}" class="hover:underline font-bold text-blue-600">
                 Baca Selengkapnya →
             </a>
         </div>
-        <div class="bg-white shadow-md py-15 px-8 rounded-lg">
-            <img src="" alt="thumbnail" class="h-[200px] border">
-            <h4 class="text-xl font-black mt-5">Judul Artikel</h4>
-            <p class="text-sm mt-2 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, aliquam!</p>
-            <a href="{{ route('blog.show', 'belajar-dasar-laravel') }}" class="hover:underline font-bold text-blue-600">
-                Baca Selengkapnya →
-            </a>
-        </div>
-        <div class="bg-white shadow-md py-15 px-8 rounded-lg">
-            <img src="" alt="thumbnail" class="h-[200px] border">
-            <h4 class="text-xl font-black mt-5">Judul Artikel</h4>
-            <p class="text-sm mt-2 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, aliquam!</p>
-            <a href="{{ route('blog.show', 'belajar-dasar-laravel') }}" class="hover:underline font-bold text-blue-600">
-                Baca Selengkapnya →
-            </a>
-        </div>
+        @endforeach
     </div>
 </section>
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
